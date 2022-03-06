@@ -1,0 +1,15 @@
+*{
+
+}
+
+.background {
+    -fx-background-image: url("Default_Map.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.hexButton{
+    -fx-shape: "M300,150 225,280 75,280 0,150 75,20 225,20z";
+    -fx-background-insets: 1, 0, 1, 0;
+}

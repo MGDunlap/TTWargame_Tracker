@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crusade.crusade_template.HelpMenu">
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="What is it?">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Campaign Map is designed as an easy and fun way to track&#10;narrative games and organized play for tabletop wargames.&#10;This basic template can be used for fantasy, sci-fi, or even&#10;historical battles.&#10;&#10;&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextArea>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Map">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" text="Opening &quot;Map&quot; in the menu bar offers the following options:&#10;&#10;Set Background:&#10;This allows you to set the background of the map. An image&#10;with the resolution of 1200 W x 1000 H is recommended.&#10;&#10;Change Resolution:&#10;This allows you to change between a small (600 x 500), &#10;Medium (800 x 666), and Large (1200 x 1000) map." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextArea>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Game Settings">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea editable="false" text="Opening &quot;Game Settings&quot; in the menu bar offers the following options:&#10;&#10;Factions menu:&#10;The faction menu allows you to change faction names, faction icons, or&#10;disable unused factions. Images with size 80 W x 100 H are recommended&#10;to reduce distortion from map size changes. Icons work with transparencies.&#10;&#10;Note: If factions are enabled or disabled, the sector map will be reset.&#10;If you must enable or disable a faction during an ongoing game, record&#10;faction ownership of sectors before doing so.&#10;&#10;Edit mode:&#10;The edit mode allows for the ability to enable or disable sector buttons, &#10;change the color of sector buttons, or record a special name or identifier&#10;for a sector." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextArea>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
