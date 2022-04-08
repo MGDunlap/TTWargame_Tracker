@@ -255,6 +255,8 @@ public class Controller {
     //                                                w1, h1, w2, h2, w3, h3
     public static double[] bSizeArray = new double[] {35, 44, 60, 74, 80, 100};
 
+    ButtonGrid buttonGrid = new ButtonGrid(1);
+
     public Controller(){
         sectorOwnerChoice = new ChoiceBox<>();
         factions = new Faction[10];
