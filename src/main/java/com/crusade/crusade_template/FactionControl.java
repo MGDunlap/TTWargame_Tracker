@@ -1,6 +1,7 @@
 package com.crusade.crusade_template;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -174,6 +175,10 @@ public class FactionControl {
             menu.setScene(scene);
             loadPrevious();
             initialDisables();
+            menu.setOnCloseRequest(e -> {
+                onCloseAction(menu);
+                e.consume();
+            });
             menu.show();
 
         } catch (IOException e) {
