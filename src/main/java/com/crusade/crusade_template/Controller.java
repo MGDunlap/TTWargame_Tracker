@@ -270,7 +270,11 @@ public class Controller {
         insetL = new Insets(85, 0, 0, 120);
         inset2S = new Insets(46, 0, 0, 60);
     }
-
+    /*
+    -------------------------------------
+    Controller Start and Initialization
+    -------------------------------------
+     */
     @FXML
     public void initialize(){
         defaultIcons = new DefaultIcons();
@@ -298,7 +302,6 @@ public class Controller {
         });
 
     }
-
     //initialize all FXML items
     public void initializeButtons(){
         sectorButtons = new SectorButton[66];
@@ -453,6 +456,12 @@ public class Controller {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+    /*
+    -------------------------------------
+    Top Menu Bar Buttons
+    -------------------------------------
+     */
+    //---------- File Button ------------
     //Prompt for closing program
     public void closeProgramButton(){
         Alert close = new Alert(Alert.AlertType.CONFIRMATION);
@@ -505,6 +514,7 @@ public class Controller {
         background = SelectImage.urlToBackground(backgroundURL);
         anchorBackground.setBackground(background);
     }
+    //----------------Map Button---------------
     //Change map size
     public void changeResBig(){
         anchorBackground.setPrefSize(1200, 1000);
@@ -554,6 +564,7 @@ public class Controller {
         anchorBackground.setBackground(background);
         unsavedData = true;
     }
+    //--------------Game Settings---------------
     //enables sector edit mode
     public void editMode(){
         if (editCheckBox.isSelected()){
@@ -568,13 +579,12 @@ public class Controller {
             disableSectors();
         }
     }
-    //sector button selection
-    public void sectorSelect(ActionEvent actionEvent){
-        SectorButton currentButton = (SectorButton) actionEvent.getSource();
-        int i = currentButton.getSector().getSectorNumber();
-        sectorControl.select(sectorButtons[i-1]);
-        sectorEdit.select(sectorButtons[i-1]);
+    //opens the edit factions menu
+    public void editFactions(){
+        factionEditMode = true;
+        factionControl.factionMenu();
     }
+    //-------------Help Button-------------
     //Window for about
     public void about(){
         Alert about = new Alert(Alert.AlertType.INFORMATION);
@@ -583,19 +593,31 @@ public class Controller {
         about.setContentText("Ver. 0.4\nMatthew G. Dunlap\n2022");
         about.showAndWait();
     }
-    //opens the edit factions menu
-    public void editFactions(){
-        factionEditMode = true;
-        factionControl.factionMenu();
-    }
     //opens help menu
     public void openHelp(){
         helpMenu.helpMenu();
     }
-    //get faction method for static faction array
-    public static Faction[] getFactions(){
-        return factions;
+    /*
+    -------------------------------------
+    Sector Control Area
+    -------------------------------------
+     */
+    //sector button selection
+    public void sectorSelect(ActionEvent actionEvent){
+        SectorButton currentButton = (SectorButton) actionEvent.getSource();
+        int i = currentButton.getSector().getSectorNumber();
+        sectorControl.select(sectorButtons[i-1]);
+        sectorEdit.select(sectorButtons[i-1]);
     }
+    //Applies selection sector control to a faction
+    public void factionApply(){
+        sectorControl.applyFaction();
+    }
+    /*
+    -------------------------------------
+    Utilities
+    -------------------------------------
+     */
     //changes the values in faction sector fields
     public static void changeFactionSectorFields(){
         for (int i = 0; i < factionSectors.length; i++){
@@ -641,15 +663,18 @@ public class Controller {
     public static boolean getFactionEditMode(){
         return factionEditMode;
     }
+    public static void setFactionEditMode(Boolean bool){
+        factionEditMode = bool;
+    }
     //disables Hboxes when factions are disabled
     public static void disableFactionHboxes(){
         for (int i = 0; i < factions.length; i++){
             factionHboxes[i].setVisible(!factions[i].isDisabled());
         }
     }
-    //Applies selection sector control to a faction
-    public void factionApply(){
-        sectorControl.applyFaction();
+    //get faction method for static faction array
+    public static Faction[] getFactions(){
+        return factions;
     }
     //set visibility of sector buttons after edit
     public void disableSectors(){

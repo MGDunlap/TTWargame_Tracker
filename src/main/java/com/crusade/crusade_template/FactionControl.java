@@ -281,7 +281,7 @@ public class FactionControl {
             Controller.setUnsavedData(true);
             stage.close();
         }
-
+        Controller.setFactionEditMode(false);
     }
 
     public void getFactionsAgain(){
