@@ -110,23 +110,23 @@
             <Insets top="10.0" />
          </padding>
       </AnchorPane>
-      <ScrollPane hbarPolicy="ALWAYS" style="-fx-background-color: #c2c2c2;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: #c2c2c2;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0" style="-fx-background-color: #c2c2c2;">
+          <AnchorPane minHeight="0.0" minWidth="200.0" style="-fx-background-color: #c2c2c2;">
                <children>
-                  <VBox alignment="TOP_RIGHT" fillWidth="false" prefWidth="200.0" style="-fx-background-color: #c2c2c2;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="TOP_RIGHT" fillWidth="false" style="-fx-background-color: #c2c2c2;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox fx:id="factionHbox1" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 1" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 1" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
-                              <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
+                              <Region prefHeight="51.0" HBox.hgrow="ALWAYS" />
                               <TextField fx:id="factionSectors1" editable="false" prefWidth="50.0">
                                  <HBox.margin>
                                     <Insets right="20.0" />
@@ -136,12 +136,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox2" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 2" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 2" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -154,12 +154,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox3" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 3" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 3" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -172,12 +172,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox4" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName4" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 4" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName4" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 4" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -190,12 +190,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox5" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName5" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 5" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName5" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 5" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -208,12 +208,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox6" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName6" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 6" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName6" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 6" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -226,12 +226,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox7" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName7" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 7" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName7" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 7" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -244,12 +244,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox8" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName8" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 8" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName8" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 8" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -262,12 +262,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox9" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName9" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 9" textAlignment="CENTER" wrappingWidth="66.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName9" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 9" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />
@@ -280,12 +280,12 @@
                         </HBox>
                         <HBox fx:id="factionHbox10" prefHeight="27.0" prefWidth="185.0">
                            <children>
-                              <Text fx:id="factionName10" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 10" textAlignment="CENTER" wrappingWidth="77.0732421875" HBox.hgrow="ALWAYS">
+                              <Text fx:id="factionName10" strokeType="OUTSIDE" strokeWidth="0.0" text="Faction 10" textAlignment="CENTER" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets />
                                  </HBox.margin>
                               </Text>
                               <Region prefHeight="200.0" HBox.hgrow="ALWAYS" />

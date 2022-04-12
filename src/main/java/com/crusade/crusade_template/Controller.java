@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.net.MalformedURLException;
@@ -255,7 +256,10 @@ public class Controller {
     //                                                w1, h1, w2, h2, w3, h3
     public static double[] bSizeArray = new double[] {35, 44, 60, 74, 80, 100};
 
-    ButtonGrid buttonGrid = new ButtonGrid(1);
+    private final double MAX_TEXT_WIDTH = 100;
+    //default (nonscaled) font size of the text/label
+    private final double defaultFontSize = 16;
+    private final Font defaultFont = Font.font(defaultFontSize);
 
     public Controller(){
         sectorOwnerChoice = new ChoiceBox<>();
@@ -290,7 +294,7 @@ public class Controller {
         applyButton = new Button[] {sectorApplyButton};
         choiceBoxes = new ChoiceBox[]{sectorOwnerChoice};
         background = SelectImage.defaultBackground();
-
+        addTextListeners();
         sectorColorPicker.setOnAction(actionEvent -> sectorEdit.setColor());
 
         sectorTypeField.setOnAction(actionEvent -> sectorEdit.setSectorType());
@@ -417,6 +421,30 @@ public class Controller {
             sectorButtons[i].setGraphic(image);
         }
     }
+    //add text size listeners?
+    private void addTextListeners(){
+        for (Text name : factionNames){
+            name.textProperty().addListener((observable, oldValue, newValue) -> {
+                //create temp Text object with the same text as the label
+                //and measure its width using default label font size
+                Text tmpText = new Text(newValue);
+
+                double textWidth = tmpText.getLayoutBounds().getWidth();
+
+                //check if text width is smaller than maximum width allowed
+                if (textWidth <= MAX_TEXT_WIDTH) {
+                    name.setFont(defaultFont);
+                } else {
+                    //and if it isn't, calculate new font size,
+                    // so that label text width matches MAX_TEXT_WIDTH
+                    double newFontSize = defaultFontSize * MAX_TEXT_WIDTH / textWidth;
+                    name.setFont(Font.font(defaultFont.getFamily(), newFontSize));
+                }
+
+            });
+        }
+    }
+
     //Removes all faction ownership of sectors
     public static void removeFactionOwnership(){
         for (int i = 0; i < factions.length; i++){
@@ -479,27 +507,30 @@ public class Controller {
     public void save(){
         String[] backgroundURLArray = new String[] {backgroundURL};
         saveData = new Object[][]{sectors, factions, backgroundURLArray};
-        //save sectors [0], factions [1]
-        SaveLoad.Save(saveData, stage);
-        unsavedData = false;
+        boolean saveComplete = SaveLoad.Save(saveData, stage);
+        if (saveComplete){
+            unsavedData = false;
+        }
     }
     //load
     public void load(){
         String[] string = new String[] {""};
         saveData = new Object[][]{sectors, factions, string};
-        SaveLoad.Load(saveData, stage);
-        sectors = (Sector[]) saveData[0];
-        factions = (Faction[]) saveData[1];
-        string = (String[]) saveData[2];
-        backgroundURL = string[0];
-        doOnLoad();
+        boolean loadComplete = SaveLoad.Load(saveData, stage);
+        if (loadComplete){
+            sectors = (Sector[]) saveData[0];
+            factions = (Faction[]) saveData[1];
+            string = (String[]) saveData[2];
+            backgroundURL = string[0];
+            doOnLoad();
+        }
     }
     //do these actions when save data is loaded
     private void doOnLoad(){
         for (int i = 0; i < sectorButtons.length; i++){
             sectorButtons[i].setSector(sectors[i]);
             sectors[i].setColorFromString();
-            sectorButtons[i].setStyle("-fx-background-color: transparent; -fx-border-color: "+ SectorEdit.toHexString(sectors[i].getSaveColor()) + "; -fx-border-width: 2;" );
+            sectorButtons[i].setStyle("-fx-background-color: rgba(255,255,255,0.1); -fx-border-color: "+ SectorEdit.toHexString(sectors[i].getSaveColor()) + "; -fx-border-width: 2;" );
         }
         for (int i = 0; i < factions.length; i++){
             factions[i].setIconFromURL();
