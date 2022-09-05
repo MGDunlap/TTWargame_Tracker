@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Crusade Elements">
+    <output-path>$PROJECT_DIR$/out/artifacts/Crusade_Elements</output-path>
+    <root id="archive" name="Crusade Elements.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/com/crusade/crusade_template/ButtonGrid.class" />
+      <element id="file-copy" path="$PROJECT_DIR$/target/classes/com/crusade/crusade_template/SectorButton.class" />
+    </root>
+  </artifact>
+</component>

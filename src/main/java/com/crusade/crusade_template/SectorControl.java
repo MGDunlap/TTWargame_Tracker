@@ -4,6 +4,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 public class SectorControl<T> {
 
     public ChoiceBox<T> sectorOwnerChoice;
@@ -12,11 +14,15 @@ public class SectorControl<T> {
     private static SectorButton currentButton;
     private Faction currentFaction;
     private int currentChoice;
+    private String logString;
+
+    private GameLog gameLog;
 
     public SectorControl(ChoiceBox<T> box, TextField numBox, TextField typBox){
         sectorOwnerChoice = box;
         sectorNumberBox = numBox;
         sectorTypeBox = typBox;
+        gameLog = new GameLog();
 
     }
 
@@ -54,6 +60,10 @@ public class SectorControl<T> {
             currentButton.setGraphic(image);
         }else{
             Faction[] factions = Controller.getFactions();
+            logString = "";
+            logString += "Sector " + currentButton.getSector().getSectorNumber() + " changed from " + currentButton.getSector().getOwner().getName() + " to " +
+                factions[currentChoice].getName();
+            gameLog.PrintLog(logString);
             currentButton.getSector().setOwner(factions[currentChoice]);
             currentFaction.territorySub();
             factions[currentChoice].territoryAdd();

@@ -251,14 +251,13 @@ public class Controller {
     private DefaultIcons defaultIcons;
     private Background background;
     private static String backgroundURL;
-    private static boolean unsavedData = false;
-    public static int buttonSize = 2;//small = 1, med. = 2, lg. = 3
-    //                                                w1, h1, w2, h2, w3, h3
     public static double[] bSizeArray = new double[] {35, 44, 60, 74, 80, 100};
-
     private final double MAX_TEXT_WIDTH = 100;
     //default (nonscaled) font size of the text/label
     private final double defaultFontSize = 16;
+    public static int buttonSize = 2;//small = 1, med. = 2, lg. = 3
+    //                                                w1, h1, w2, h2, w3, h3
+    private static boolean unsavedData = false;
     private final Font defaultFont = Font.font(defaultFontSize);
 
     public Controller(){
