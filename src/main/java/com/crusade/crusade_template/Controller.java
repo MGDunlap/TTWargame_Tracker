@@ -203,6 +203,8 @@ public class Controller {
     @FXML
     private Button sectorApplyButton = new Button();
     @FXML
+    private Button sectorLogButton = new Button();
+    @FXML
     private HBox factionHbox1 = new HBox();
     @FXML
     private HBox factionHbox2 = new HBox();
@@ -239,6 +241,7 @@ public class Controller {
     private static Sector[] sectors;
     private static TextField[] factionSectors;
     private static Button[] applyButton;
+    private static Button[] logButton;
     private static Text[] factionNames;
     private static ChoiceBox[] choiceBoxes;
     private static HBox[] factionHboxes;
@@ -291,6 +294,7 @@ public class Controller {
         sectorControl = new SectorControl<String>(sectorOwnerChoice, sectorNumberBox, sectorTypeBox);
         sectorEdit = new SectorEdit(sectorColorPicker, sectorTypeField, disableCheckBox);
         applyButton = new Button[] {sectorApplyButton};
+        logButton = new Button[] {sectorLogButton};
         choiceBoxes = new ChoiceBox[]{sectorOwnerChoice};
         background = SelectImage.defaultBackground();
         addTextListeners();
@@ -643,6 +647,10 @@ public class Controller {
     public void factionApply(){
         sectorControl.applyFaction();
     }
+    //Logs sector in game log, when territory doesn't change hands after a battle
+    public void logSector(){
+        sectorControl.logSector();
+    }
     /*
     -------------------------------------
     Utilities
@@ -680,6 +688,7 @@ public class Controller {
     //disable/enable sector apply button
     public static void setApplyButton(boolean enable){
         applyButton[0].setDisable(!enable);
+        //logButton[0].setDisable(!enable);
     }
     //get number of disabled factions (where am I using this?)
     public static int getNumDisabled(){

@@ -51,6 +51,10 @@ public class SectorControl<T> {
     }
     public void applyFaction(){
         if (sectorOwnerChoice.getItems().get(currentChoice) == "None"){
+            Faction[] factions = Controller.getFactions();
+            logString = "";
+            logString += "Sector " + currentButton.getSector().getSectorNumber() + " changed from " + currentButton.getSector().getOwner().getName() + " to None";
+            gameLog.PrintLog(logString);
             currentFaction.territorySub();
             currentFaction = null;
             currentButton.getSector().setToUnowned();
@@ -76,5 +80,11 @@ public class SectorControl<T> {
         Controller.setApplyButton(false);
         Controller.changeFactionSectorFields();
         Controller.setUnsavedData(true);
+    }
+
+    public void logSector(){
+        logString = "";
+        logString += "Sector " + currentButton.getSector().getSectorNumber() + ", controlled by " + currentButton.getSector().getOwner().getName() + ", remains secure";
+        gameLog.PrintLog(logString);
     }
 }

@@ -371,6 +371,16 @@
                                           <Insets bottom="5.0" left="10.0" right="20.0" top="5.0" />
                                        </VBox.margin>
                                     </HBox>
+                                    <HBox prefHeight="37.0" prefWidth="200.0">
+                                       <children>
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="sectorLogButton" mnemonicParsing="false" onAction="#logSector" text="Log Territory " />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="10.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
                                     <Region prefHeight="1000.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                                     <Region VBox.vgrow="ALWAYS" />
                                  </children>
